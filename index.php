@@ -1,7 +1,7 @@
 <?php																				
 	session_start();
 	require_once("info.php");											    
-	
+
 	$error = "no";
 	
 	if (!empty($_GET["page"]) && is_file($_GET["page"].".php"))

@@ -1,4 +1,5 @@
 <?php
+	//redirect to reservation or detail if the button "Previous page" is pressed
 	if (isset($_POST['prevpage']) && $_POST['prevpage'] == "Previous page")
 	{
 		$info = unserialize($_SESSION['info']);
@@ -16,6 +17,7 @@
 	}
 	else
 	{
+		//call reservation
 		include './pages/reservation.php';
 	}
 ?>

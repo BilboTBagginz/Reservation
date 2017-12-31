@@ -8,7 +8,7 @@
   {
     $insurance = 0;
   }
-
+  // since the database contains only one table, it's easier to decompose the arrays in variables before dumping it in
   $personal = $info->get_personal_info();
   $pass1 = $personal[0][0] . ' ' . $personal[0][1];
   $pass2 = '';
@@ -35,16 +35,17 @@
   $password = "";
   $dbname = "reservation";
 
-
+  //connect to the database
   $conn = new mysqli($servername, $username, $password, $dbname);
 
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
   } 
-
+  // dump everithing into the database
   $sql = "INSERT INTO party (car, price, insurance, pass1, pass2, pass3, pass4)
   VALUES ('$cars', '$price', '$insurance', '$pass1', '$pass2', '$pass3', '$pass4')";
 
+  //check if the dump was successful
   if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
   } else {

@@ -11,12 +11,12 @@
 
 	<?php 
 	$info = unserialize($_SESSION['info']);
-	
+	//print a message if a field isn't filled
 	if ($error == "unfilled")
 	{
 		echo '<p id = error> All fields must be filled<p>';
 	}
-	
+	//print a message if there are more passengers than the car can support
 	if ($error == "toohigh")
 	{
 		echo "<p id = error> Our cars can only take one to four passengers <p>";
@@ -53,7 +53,7 @@
 		</br>
 		<input type='submit' value='Next step'/> 
 		
-		
+		</form>
 		<form method='post' action='index.php?page=./destruct'>
 			<input type='submit' value='Cancel reservation'/>
 		</form>		

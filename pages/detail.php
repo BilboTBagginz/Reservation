@@ -55,13 +55,13 @@
 			Age <span style='padding-left:62px'</span> <input type='text' name='age' value = '<?php if (isset($information[$iter-2])) echo $information[$iter-2][2];?>'> </br>	
 			
 			<input type='submit' value='Next step'/>
-				
+		</form>	
 		<form method ='post' action='index.php?page=./ctrl/ctrl_reservation'>
 			<input type='submit' value='Previous page'/>
-			
+		</form>
 		<form method ='post' action='index.php?page=./destuct'>
 			<input type='submit' value='Cancel reservation'/>
-	
+		</form>
 	</div>
 </body>
 </html>

@@ -7,6 +7,7 @@
 <body>
 	<h2>Payment</h2>
 	<?php
+	// print the amount to pay 
 		$info = unserialize($_SESSION['info']);
 		$check = $info->get_price();
 		echo "Would you kindly transfer ".$check." € to the account XXXXX-XXXXXXXX";

@@ -10,11 +10,12 @@
     
 <?php
 	$info = unserialize($_SESSION['info']);
+	//if no passenger are major, 
 	if ($info->is_major() == false)
 	{
 		echo '<p id = error> There must be at least one major person to perform the payment <p>';
 	}
-	
+	// printing the reservation informations
 	echo '<p>';
 	echo "Car: <span style='padding-left:118px'</span>".$info->get_cars();
 	echo "<br>Number of passengers:".$info->get_nbr_passengers();
@@ -39,19 +40,22 @@
 	{
 		echo 'not taken';
 	}
-?>
 
-	<form method ='post' action='index.php?page=./ctrl/ctrl_payment'>
-		<input type='submit' value='Confirm'/>
-	
-	
+	// not very catholic but prevent to continue further if nobody is major
+	if ($info->is_major() != false)
+	{
+		echo "<form method ='post' action='index.php?page=./ctrl/ctrl_payment'>
+			  	<input type='submit' value='Confirm'/>
+			  </form>";
+	}
+	?>
 	<form method ='post' action='index.php?page=./ctrl/ctrl_reservation'>
 		<input type='submit' name="prevpage2" value='Previous page'>
 	
-	
+	</form>
 	<form method='post' action='index.php?page=./destruct'>
 		<input type='submit' value='Cancel reservation'/>
-	
+	</form>
 </div>	
 </body>
 </html>

@@ -8,7 +8,7 @@
 
 <?php
  
-
+  //connect to the database
   $con=mysqli_connect("localhost","root","","reservation");
   if (mysqli_connect_errno())
     {
@@ -16,7 +16,7 @@
     }
 
   $result = mysqli_query($con,"SELECT * FROM party");
-
+  //display the content of the table
   while($row = mysqli_fetch_array($result))
     {
     echo $row['Pk_party']." ".$row['car']." ".$row['price']." ".$row['insurance']." ".$row['pass1']." ".$row['pass2']." ".$row['pass3']." ".$row['pass4'];

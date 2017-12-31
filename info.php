@@ -1,9 +1,11 @@
 <?php
+	//this class contains all the informations accumulated during the session
 	class info
 		{
 			private $_cars;
 			private $_nbr_passengers;
 			private $_insurance;
+			//array containing the firstname, lastname and age of every passengers
 			private $_list_personal_info;	
 			private $_iter;
 			private $_price;
@@ -63,6 +65,7 @@
 				$this->_price = $price;
 			}
 
+			//get the total price of the reservation based on the age and the cancelation insurance
 			public function get_price()
 			{
 				$this->_price = 0;
@@ -98,7 +101,7 @@
 			{
 				$this->_iter = 1;
 			}
-
+			// check if at least on passanger is major
 			public function is_major()
 			{
 				foreach ($this->_list_personal_info as $info)
